@@ -1,0 +1,58 @@
+@import '~react-big-calendar/lib/css/react-big-calendar.css';
+
+.home-container {
+  height: 100%;
+}
+
+.home-wrapper {
+  display: flex;
+  height: 100%;
+
+  .rbc-calendar {
+    width: 100%;
+
+    .header {
+      padding: 20px;
+      display: flex;
+
+      div:first-child {
+        width: 50%;
+      }
+
+      div:nth-child(2) {
+        font-size: 20px;
+      }
+    }
+
+    .rbc-event-content {
+      display: flex;
+      width: 100%;
+
+      div {
+        flex: 1;
+      }
+
+      &:hover {
+        .delete-icon {
+          display: inline-block;
+        }
+      }
+      .delete-icon {
+        display: none;
+      }
+    }
+
+    .loop (@i) when (@i > 0) {
+      .rbc-events-container {
+        div:first-child:nth-last-child(@{i}),
+        div:first-child:nth-last-child(@{i}) ~ div {
+          width: 100% / @i !important;
+        }
+      }
+
+      .loop(@i - 1);
+    }
+
+    /*.loop(15);*/
+  }
+}

@@ -1,0 +1,52 @@
+.spinner-container {
+  height: 100%;
+}
+
+.layout-content {
+  overflow: initial;
+  min-height: auto;
+  height: 100%;
+
+  .spinner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .spin-icon {
+      font-size: 60px;
+    }
+  }
+}
+
+.layout-side {
+  .ant-layout-sider-children {
+    padding: 18px;
+
+    .side-header-wrapper {
+      margin-bottom: 20px;
+
+      .logo-img {
+        width: 64px;
+        height: 43px;
+        transition: all 0.2s;
+      }
+
+      .side-unfold {
+        margin-left: 20px;
+      }
+    }
+
+    .menu-icon {
+      margin-top: 10px;
+      float: right;
+    }
+  }
+}
+
+.site-layout-background {
+  position: sticky;
+  padding: 0 20px;
+  top: 0;
+  z-index: 1;
+}
