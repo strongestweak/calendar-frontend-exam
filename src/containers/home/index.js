@@ -86,18 +86,26 @@ class HomeComponent extends Component {
       }
       const over = []
       details.map((item, index) => {
-        console.log('----')
+        const top = +item.top
+        const height = +item.height + top
+        let count = 0
         details.map((item2, index2) => {
           if (index !== index2) {
-            console.log(item, ' item')
-            console.log(item2, ' item2')
-            if (+item2.top >= +item.top && +item2.top <= +item.height) {
-              console.log(true)
+            const top2 = +item2.top
+            const height2 = +item2.height + top2
+            let logic = false
+            if (top < top2) {
+              logic = top <= height2 && top2 <= height
             } else {
-              console.log(false)
+              logic = top2 <= height && top <= height2
             }
+            if (logic) count++
           }
         })
+        over.push(count)
+      })
+      over.map((num, index) => {
+        children[index].style.width = `${100 / (num + 1)}%`
       })
     }
   }
