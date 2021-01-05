@@ -5,7 +5,7 @@
   "dependencies": {
     "antd": "^4.1.0",
     "antd-react-scripts": "0.2.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "date-fns": "^2.11.1",
     "moment": "^2.24.0",
     "react": "^16.13.1",
